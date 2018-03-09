@@ -110,8 +110,10 @@ open class SKPhotoBrowser: UIViewController {
         configurePaginationView()
         configureToolbar()
         
-        //Comment this line because present into ipad cause the strange behavior
-        //animator.willPresent(self)
+        //In ipad cause the strange behavior on ipad when we present the view
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            animator.willPresent(self)
+        }
     }
     
     override open func viewWillAppear(_ animated: Bool) {
