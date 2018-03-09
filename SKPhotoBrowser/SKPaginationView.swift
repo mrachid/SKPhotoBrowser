@@ -17,6 +17,8 @@ class SKPaginationView: UIView {
     
     fileprivate weak var browser: SKPhotoBrowser?
     
+    let bgColor: UIColor = SKToolbarOptions.backgroundColor
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -80,7 +82,7 @@ class SKPaginationView: UIView {
 
 private extension SKPaginationView {
     func setupApperance() {
-        backgroundColor = .clear
+        backgroundColor = bgColor
         clipsToBounds = true
     }
     
