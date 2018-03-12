@@ -118,6 +118,11 @@ open class SKPhotoBrowser: UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        //Hide status bar when present view only iPhone
+        if UIDevice.current.userInterfaceIdiom == .phone && !SKPhotoBrowserOptions.displayStatusbar {
+            let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+            statusBar.isHidden = true
+        }
         reloadData()
         
         var i = 0
@@ -149,6 +154,14 @@ open class SKPhotoBrowser: UIViewController {
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         isViewActive = true
+    }
+    
+    override open func viewWillDisappear(_ animated: Bool) {
+        //Display status bar when dismiss view only iPhone
+        if UIDevice.current.userInterfaceIdiom == .phone && !SKPhotoBrowserOptions.displayStatusbar {
+            let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+            statusBar.isHidden = false
+        }
     }
     
     override open var prefersStatusBarHidden: Bool {
