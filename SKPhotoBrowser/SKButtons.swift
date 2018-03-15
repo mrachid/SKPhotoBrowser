@@ -22,7 +22,7 @@ class SKButton: UIButton {
             return UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         }
     }
-    fileprivate let size: CGSize = CGSize(width: 44, height: 44)
+    fileprivate let size: CGSize = CGSize(width: 65, height: 65)
     fileprivate let buttonTopOffset: CGFloat = 30
     fileprivate var margin: CGFloat = SKPhotoBrowserOptions.closeAndDeleteButtonPadding
 
