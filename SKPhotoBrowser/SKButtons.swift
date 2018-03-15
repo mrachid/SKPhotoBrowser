@@ -76,7 +76,7 @@ class SKImageButton: SKButton {
 }
 
 class SKCloseButton: SKImageButton {
-    override var imageName: String { return "btn_common_close_wh" }
+    override var imageName: String { return "btn_common_close_white_wh" }
     override var margin: CGFloat {
         get {
             return SKPhotoBrowserOptions.swapCloseAndDeleteButtons
